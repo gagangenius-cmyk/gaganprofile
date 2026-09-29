@@ -109,6 +109,49 @@ export const skillGroups = [
   },
 ];
 
+export const projects = [
+  {
+    title: "Banke International Properties",
+    description:
+      "Enterprise real-estate CRM, CMS and investor-facing portal for a global property investment firm, handling 1M+ lead and listing records.",
+    image: "/projects/banke.png",
+    url: "https://banke.ae",
+    tags: ["Next.js", "NestJS", "CRM", "ECharts"],
+  },
+  {
+    title: "Commonwealth Migration Group",
+    description:
+      "Immigration-consultancy platform with live Express Entry draw tracking, CRS scoring tools, and consultation booking for Canadian immigration.",
+    image: "/projects/commonwealthmigration.png",
+    url: "https://commonwealthmigration.ca/",
+    tags: ["Next.js", "Node.js", "CRM"],
+  },
+  {
+    title: "DM Consultant Middle East",
+    description:
+      "Dubai-based visa and immigration consultancy site covering skilled migration, study, work and visit visas, backed by a 3M+ record CRM.",
+    image: "/projects/dmconsultant.png",
+    url: "http://dm-consultant.ae/",
+    tags: ["React.js", "Node.js", "MongoDB"],
+  },
+  {
+    title: "ScoreCarts Retail Analytics",
+    description:
+      "Retail analytics dashboard delivering real-time insights and data-driven decision tools, deployed on AWS with automated CI/CD.",
+    image: "/projects/scorecarts.png",
+    url: "https://pg.scorecarts.com",
+    tags: ["Node.js", "React.js", "AWS"],
+  },
+  {
+    title: "TPConnects",
+    description:
+      "Enterprise travel-booking platform for flights, hotels, cars and cruises, with GraphQL APIs and airline-system integrations.",
+    image: "/projects/tpconnects.png",
+    url: "https://tpconnects.com",
+    tags: ["React.js", "GraphQL", "Angular"],
+  },
+];
+
 type Job = {
   role: string;
   company: string;
