@@ -13,7 +13,7 @@ export default function Projects() {
     <section
       id="projects"
       className="border-b border-border"
-      style={{ backgroundColor: paletteAt(5).bg }}
+      style={{ backgroundColor: paletteAt(2).bg }}
     >
       <div className="mx-auto max-w-6xl px-6 py-20">
         <SectionHeading index="03" eyebrow="Live client work" title="Projects" />
