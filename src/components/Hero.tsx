@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ZoomIn } from "lucide-react";
 import { profile, stats } from "@/data/resume";
 import { paletteAt } from "@/lib/palette";
 import AnimatedCounter from "./AnimatedCounter";
+import Lightbox from "./Lightbox";
 import TypingRole from "./TypingRole";
 
 const container = {
@@ -29,6 +32,8 @@ const badges = [
 ];
 
 export default function Hero() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
   return (
     <section id="top" className="relative overflow-hidden border-b border-border">
       <div className="bg-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_top,black,transparent_75%)]" />
@@ -140,7 +145,12 @@ export default function Hero() {
             className="absolute inset-6 rounded-full border border-dashed border-accent/30"
           />
 
-          <div className="absolute inset-10 overflow-hidden rounded-full border-4 border-surface bg-surface-2 shadow-xl">
+          <button
+            type="button"
+            onClick={() => setLightboxOpen(true)}
+            aria-label={`View full-size photo of ${profile.name}`}
+            className="group absolute inset-10 overflow-hidden rounded-full border-4 border-surface bg-surface-2 shadow-xl"
+          >
             <Image
               src={profile.avatar}
               alt={profile.name}
@@ -149,7 +159,10 @@ export default function Hero() {
               className="object-cover"
               priority
             />
-          </div>
+            <span className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-200 group-hover:bg-black/30 group-hover:opacity-100">
+              <ZoomIn className="h-7 w-7 text-white" />
+            </span>
+          </button>
 
           <div className="animate-gradient-pan absolute inset-8 -z-10 rounded-full bg-linear-to-br from-accent via-accent-2 to-accent-3 opacity-30 blur-xl" />
 
