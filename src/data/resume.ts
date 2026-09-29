@@ -150,6 +150,46 @@ export const projects = [
     url: "https://tpconnects.com",
     tags: ["React.js", "GraphQL", "Angular"],
   },
+  {
+    title: "Sayed Metal",
+    description:
+      "CMS and e-commerce platform with real-time live-chat and group-chat functionality for a UAE metal-trading business.",
+    image: null,
+    url: "https://myscrap.com",
+    tags: ["Node.js", "WebSockets", "CMS", "E-Commerce"],
+  },
+  {
+    title: "CMG CRM Portal",
+    description:
+      "Internal staff CRM for Commonwealth Migration Group covering leads, clients, operations, payments and reporting across every branch.",
+    image: "/projects/cmgsales.png",
+    url: "https://cmgsales.ca",
+    tags: ["React.js", "Node.js", "CRM", "Auth"],
+  },
+  {
+    title: "Global Navigator CRM",
+    description:
+      "Multi-country staff CRM spanning Dubai HQ, Canada, Europe, Australia and New Zealand, covering leads through final approval.",
+    image: "/projects/navigatorcrm.png",
+    url: "https://navigatorcrm.online",
+    tags: ["React.js", "Node.js", "CRM", "Multi-region"],
+  },
+  {
+    title: "DMC One CRM Portal",
+    description:
+      "Internal CRM workspace for DM Consultant covering leads, clients, operations, payments and reporting across every branch.",
+    image: "/projects/dmcone.png",
+    url: "https://dmcone.org",
+    tags: ["React.js", "Node.js", "CRM", "Auth"],
+  },
+  {
+    title: "Banke Connect",
+    description:
+      "Staff portal for Banke International Properties, the gateway CRM into Dubai's real-estate market for the internal sales team.",
+    image: "/projects/crmbanke.png",
+    url: "https://crm.banke.one",
+    tags: ["Next.js", "NestJS", "CRM"],
+  },
 ];
 
 type Job = {

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import { projects } from "@/data/resume";
 import { paletteAt } from "@/lib/palette";
@@ -32,13 +32,25 @@ export default function Projects() {
                   className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-sm hover:shadow-lg"
                 >
                   <div className="relative aspect-video w-full overflow-hidden border-b border-border bg-surface-2">
-                    <Image
-                      src={project.image}
-                      alt={`${project.title} homepage screenshot`}
-                      fill
-                      sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw"
-                      className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                    />
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} homepage screenshot`}
+                        fill
+                        sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw"
+                        className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div
+                        className="flex h-full w-full flex-col items-center justify-center gap-2"
+                        style={{ backgroundColor: paletteAt(idx).bg }}
+                      >
+                        <Globe className="h-7 w-7" style={{ color: fg }} />
+                        <span className="text-xs font-medium" style={{ color: fg }}>
+                          {new URL(project.url).hostname.replace("www.", "")}
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   <div className="flex flex-1 flex-col gap-2.5 p-5">
