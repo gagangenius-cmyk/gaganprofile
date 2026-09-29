@@ -184,6 +184,13 @@ export default function Hero() {
           })}
         </motion.div>
       </div>
+
+      <Lightbox
+        src={profile.avatar}
+        alt={profile.name}
+        open={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
     </section>
   );
 }
