@@ -5,6 +5,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { profile } from "@/data/resume";
 import { GithubIcon, LinkedinIcon } from "./icons/Brand";
+import Lightbox from "./Lightbox";
 
 const links = [
   { href: "#about", label: "About" },
@@ -18,6 +19,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<string>("");
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -55,13 +57,20 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" className="flex items-center gap-2.5 font-mono text-sm tracking-tight text-foreground">
-          <span className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full border border-border">
+        <div className="flex items-center gap-2.5 font-mono text-sm tracking-tight text-foreground">
+          <button
+            type="button"
+            onClick={() => setLightboxOpen(true)}
+            aria-label={`View full-size photo of ${profile.name}`}
+            className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full border border-border"
+          >
             <Image src={profile.avatar} alt={profile.name} fill sizes="32px" className="object-cover" />
-          </span>
-          <span className="text-gradient font-semibold">GL</span>
-          <span className="hidden text-muted sm:inline"> / {profile.title}</span>
-        </a>
+          </button>
+          <a href="#top" className="flex items-center gap-2.5">
+            <span className="text-gradient font-semibold">GL</span>
+            <span className="hidden text-muted sm:inline"> / {profile.title}</span>
+          </a>
+        </div>
 
         <div className="hidden items-center gap-1 md:flex">
           {links.map((link) => (
@@ -156,6 +165,13 @@ export default function Nav() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <Lightbox
+        src={profile.avatar}
+        alt={profile.name}
+        open={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
     </header>
   );
 }
