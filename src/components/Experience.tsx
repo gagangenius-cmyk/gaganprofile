@@ -9,7 +9,7 @@ import SectionHeading from "./SectionHeading";
 
 export default function Experience() {
   return (
-    <section id="experience" className="border-b border-border">
+    <section id="experience" className="border-b border-border" style={{ backgroundColor: paletteAt(2).bg }}>
       <div className="mx-auto max-w-6xl px-6 py-20">
         <SectionHeading index="03" eyebrow="Where I've worked" title="Experience" />
 

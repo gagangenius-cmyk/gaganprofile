@@ -3,13 +3,14 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import { profile } from "@/data/resume";
+import { paletteAt } from "@/lib/palette";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import { GithubIcon, LinkedinIcon } from "./icons/Brand";
 
 export default function Contact() {
   return (
-    <section id="contact">
+    <section id="contact" style={{ backgroundColor: paletteAt(4).bg }}>
       <div className="mx-auto max-w-6xl px-6 py-24">
         <SectionHeading index="05" eyebrow="Get in touch" title="Contact" />
 

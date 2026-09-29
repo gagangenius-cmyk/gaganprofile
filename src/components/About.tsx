@@ -35,7 +35,7 @@ const icons: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export default function About() {
   return (
-    <section id="about" className="border-b border-border">
+    <section id="about" className="border-b border-border" style={{ backgroundColor: paletteAt(0).bg }}>
       <div className="mx-auto max-w-6xl px-6 py-20">
         <SectionHeading index="01" eyebrow="Get to know me" title="About" />
 

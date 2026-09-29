@@ -9,7 +9,7 @@ import SectionHeading from "./SectionHeading";
 
 export default function Education() {
   return (
-    <section id="education" className="border-b border-border">
+    <section id="education" className="border-b border-border" style={{ backgroundColor: paletteAt(3).bg }}>
       <div className="mx-auto max-w-6xl px-6 py-20">
         <SectionHeading index="04" eyebrow="Academic background" title="Education" />
 

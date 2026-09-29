@@ -29,7 +29,7 @@ const icons: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="border-b border-border">
+    <section id="skills" className="border-b border-border" style={{ backgroundColor: paletteAt(1).bg }}>
       <div className="mx-auto max-w-6xl px-6 py-20">
         <SectionHeading index="02" eyebrow="What I work with" title="Skills" />
 
