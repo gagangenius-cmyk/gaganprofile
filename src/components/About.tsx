@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { profile, strengths } from "@/data/resume";
+import { paletteAt } from "@/lib/palette";
 import Reveal, { RevealGroup, RevealItem } from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
@@ -62,16 +63,20 @@ export default function About() {
                 Strengths
               </h4>
               <RevealGroup className="grid grid-cols-1 gap-2.5" stagger={0.04}>
-                {strengths.map((s) => {
+                {strengths.map((s, idx) => {
                   const Icon = icons[s] ?? Award;
+                  const { fg, bg } = paletteAt(idx);
                   return (
                     <RevealItem key={s} y={10}>
                       <motion.div
                         whileHover={{ x: 4 }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                        className="flex items-center gap-3 rounded-xl border border-border bg-surface-2 px-3 py-2.5 text-sm text-muted transition-colors hover:border-accent/40 hover:text-foreground"
+                        className="flex items-center gap-3 rounded-xl border border-border bg-surface-2 px-3 py-2.5 text-sm text-muted transition-colors hover:text-foreground"
                       >
-                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-background text-accent">
+                        <span
+                          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg"
+                          style={{ backgroundColor: bg, color: fg }}
+                        >
                           <Icon className="h-4 w-4" />
                         </span>
                         {s}

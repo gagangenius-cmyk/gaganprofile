@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { skillGroups } from "@/data/resume";
+import { paletteAt } from "@/lib/palette";
 import { RevealGroup, RevealItem } from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
@@ -33,8 +34,9 @@ export default function Skills() {
         <SectionHeading index="02" eyebrow="What I work with" title="Skills" />
 
         <RevealGroup className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" stagger={0.06}>
-          {skillGroups.map((group) => {
+          {skillGroups.map((group, idx) => {
             const Icon = icons[group.title] ?? Boxes;
+            const { fg, bg } = paletteAt(idx);
             return (
               <RevealItem key={group.title}>
                 <motion.div
@@ -42,10 +44,16 @@ export default function Skills() {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   className="group relative h-full rounded-2xl p-px"
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-accent via-accent-2 to-accent-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div
+                    className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    style={{ background: fg }}
+                  />
                   <div className="relative h-full rounded-[15px] border border-border bg-surface p-6 shadow-sm">
                     <div className="mb-4 flex items-center gap-3">
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-surface-2 text-accent">
+                      <span
+                        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
+                        style={{ backgroundColor: bg, color: fg }}
+                      >
                         <Icon className="h-4.5 w-4.5" />
                       </span>
                       <h3 className="text-sm font-medium text-foreground">
@@ -56,7 +64,7 @@ export default function Skills() {
                       {group.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="rounded-md border border-border bg-surface-2 px-2.5 py-1 text-xs text-muted transition-colors hover:border-accent hover:text-accent"
+                          className="rounded-md border border-border bg-surface-2 px-2.5 py-1 text-xs text-muted transition-colors"
                         >
                           {skill}
                         </span>
