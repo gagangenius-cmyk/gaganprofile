@@ -40,7 +40,7 @@ export default function About() {
 
         <div className="grid gap-6 md:grid-cols-5">
           <Reveal className="md:col-span-3" delay={0.05}>
-            <div className="flex h-full flex-col justify-between gap-6 rounded-3xl border border-border bg-surface p-8 shadow-sm">
+            <div className="flex flex-col gap-6 rounded-3xl border border-border bg-surface p-8 shadow-sm">
               <h3 className="text-2xl font-semibold text-foreground sm:text-3xl">
                 15+ years turning complex requirements into{" "}
                 <span className="text-gradient">reliable software.</span>
