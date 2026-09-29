@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { profile, stats } from "@/data/resume";
+import { paletteAt } from "@/lib/palette";
 import AnimatedCounter from "./AnimatedCounter";
 import TypingRole from "./TypingRole";
 
@@ -152,18 +153,22 @@ export default function Hero() {
 
           <div className="animate-gradient-pan absolute inset-8 -z-10 rounded-full bg-linear-to-br from-accent via-accent-2 to-accent-3 opacity-30 blur-xl" />
 
-          {badges.map((badge) => (
-            <motion.span
-              key={badge.label}
-              className={`animate-float-y absolute rounded-full border border-border bg-surface px-3 py-1.5 font-mono text-xs font-medium text-foreground shadow-lg ${badge.className}`}
-              style={{ animationDelay: `${badge.delay}s` }}
-              initial={{ opacity: 0, scale: 0.7 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.9 + badge.delay * 0.15, type: "spring", stiffness: 260, damping: 20 }}
-            >
-              {badge.label}
-            </motion.span>
-          ))}
+          {badges.map((badge, idx) => {
+            const { fg } = paletteAt(idx);
+            return (
+              <motion.span
+                key={badge.label}
+                className={`animate-float-y absolute inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-3 py-1.5 font-mono text-xs font-medium text-foreground shadow-lg ${badge.className}`}
+                style={{ animationDelay: `${badge.delay}s` }}
+                initial={{ opacity: 0, scale: 0.7 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.9 + badge.delay * 0.15, type: "spring", stiffness: 260, damping: 20 }}
+              >
+                <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: fg }} />
+                {badge.label}
+              </motion.span>
+            );
+          })}
         </motion.div>
       </div>
     </section>
