@@ -95,7 +95,7 @@ export default function Hero() {
             >
               View experience
             </motion.a>
-            <div className="flex items-center gap-3 pl-2 text-sm text-muted">
+            <div className="flex w-full items-center gap-3 pt-1 text-sm text-muted sm:w-auto sm:pt-0 sm:pl-2">
               <a href={profile.github} target="_blank" rel="noreferrer" className="hover:text-foreground">
                 GitHub
               </a>
