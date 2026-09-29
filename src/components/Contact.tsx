@@ -10,9 +10,9 @@ import { GithubIcon, LinkedinIcon } from "./icons/Brand";
 
 export default function Contact() {
   return (
-    <section id="contact" style={{ backgroundColor: paletteAt(4).bg }}>
+    <section id="contact" style={{ backgroundColor: paletteAt(5).bg }}>
       <div className="mx-auto max-w-6xl px-6 py-24">
-        <SectionHeading index="05" eyebrow="Get in touch" title="Contact" />
+        <SectionHeading index="06" eyebrow="Get in touch" title="Contact" />
 
         <Reveal delay={0.1}>
           <div className="relative overflow-hidden rounded-3xl border border-border bg-surface px-6 py-16 text-center shadow-sm sm:px-16">

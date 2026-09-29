@@ -9,9 +9,9 @@ import SectionHeading from "./SectionHeading";
 
 export default function Education() {
   return (
-    <section id="education" className="border-b border-border" style={{ backgroundColor: paletteAt(3).bg }}>
+    <section id="education" className="border-b border-border" style={{ backgroundColor: paletteAt(4).bg }}>
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <SectionHeading index="04" eyebrow="Academic background" title="Education" />
+        <SectionHeading index="05" eyebrow="Academic background" title="Education" />
 
         <RevealGroup className="grid gap-4 sm:grid-cols-2" stagger={0.08}>
           {education.map((ed, idx) => {
